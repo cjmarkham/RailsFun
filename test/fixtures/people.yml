@@ -1,9 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  gender: 
+  name: Carl Markham
+  address_1: 2 Queen Street
+  address_2: Grange Villa
+  county: Durham
+  post_code: DH2 3LT
 
 two:
-  name: MyString
-  gender: 
+  name: Marc Qualie
+  address_1: 1 Rails Lane
+  address_2: Rubyland 
+  county: Unicorn State
+  post_code: RR1 1RR
