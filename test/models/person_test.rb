@@ -6,8 +6,14 @@ class PersonTest < ActiveSupport::TestCase
   # end
   # 
   
-  test "should not save without valid params" do
+  test "should throw name required error" do
     person = Person.create
-    assert_not person.save
+    assert_equal("Name can't be blank", person.errors.full_messages[0])
   end
+
+  test "should find the person" do
+    person = Person.find(people(:one).id)
+    assert_equal("Carl Markham", person.name)
+  end
+
 end
