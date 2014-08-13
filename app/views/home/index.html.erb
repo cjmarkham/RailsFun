@@ -77,7 +77,7 @@
                         <%= p.post_code %>
                     </td>
                     <td>
-                        <%= p.created_at.strftime('%d-%m-%Y, %H:%M %p') %>
+                        <%= format(p.created_at, '%d-%m-%Y, %H:%M %p') %>
                     </td>
                     <td class="text-center" width="100">
                         <%= link_to(person_path(p.id), :method => :delete, :title => 'Delete', :data => {:toggle => 'tooltip'}) do %>
