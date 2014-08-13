@@ -4,4 +4,10 @@ class Person < ActiveRecord::Base
         length: { minimum: 2 }
     validates :address_1, 
         presence: true
+    validates :address_2, 
+        presence: true
+    validates :county, 
+        presence: true
+    validates :post_code, 
+        presence: true
 end

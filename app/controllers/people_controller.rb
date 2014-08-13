@@ -13,9 +13,23 @@ class PeopleController < ApplicationController
         @person = Person.find(params[:id])
     end
 
-    def destroy
-        #@person = Person.find(params[:id])
+    def edit
+        @person = Person.find(params[:id])
+    end
 
+    def update
+        person = Person.find(params[:id])
+
+        person.update(person_params)
+        
+        if person.save
+            redirect_to person
+        else
+            redirect_to edit_person_path, :flash => { :errors => person.errors.full_messages }
+        end
+    end
+
+    def destroy
         Person.destroy(params[:id])
         redirect_to '/'
     end
