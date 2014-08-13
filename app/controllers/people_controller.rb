@@ -8,7 +8,7 @@ class PeopleController < ApplicationController
             redirect_to '/', flash: { errors: person.errors.full_messages }
         end
     end
-
+ 
     def show
         @person = Person.find(params[:id])
     end

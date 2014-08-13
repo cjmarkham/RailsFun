@@ -7,7 +7,7 @@ class PersonTest < ActiveSupport::TestCase
   # 
   
   test "should not save without valid params" do
-    person = Person.create()
+    person = Person.create
     assert_not person.save
   end
 end
