@@ -1,3 +1,1 @@
-== README
-
-[![Code Climate](https://codeclimate.com/github/cjmarkham/RailsFun/badges/gpa.svg)](https://codeclimate.com/github/cjmarkham/RailsFun)
+{<img src="https://codeclimate.com/github/cjmarkham/RailsFun/badges/gpa.svg" />}[https://codeclimate.com/github/cjmarkham/RailsFun]
