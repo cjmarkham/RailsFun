@@ -2,6 +2,13 @@
     <div class="container text-center">
         <h1>Create a new person</h1>
         <br />
+        <% if flash[:errors] %>
+            <% flash[:errors].full_messages.each do |error| %>
+                <p class="alert alert-danger">
+                    <%= error %>
+                </p>
+            <% end %>
+        <% end %>
         <%= form_for :person, url: people_path, html: {class: 'form-horizontal text-left'} do |form| %>
             <div class="form-group">
                 <%= form.label :name, :class => 'col-sm-3 control-label' %>
@@ -66,9 +73,9 @@
                         <%= p.created_at.strftime('%d-%m-%Y, %H:%M %p') %>
                     </td>
                     <td class="text-center" width="100">
-                        <a title="Delete" data-toggle="tooltip" href="/people/<%= p.id %>/delete">
+                        <%= link_to(person_path(p.id), :method => :delete, :confirm => 'Really?', :title => 'Delete', :data => {:toggle => 'tooltip'}) do %>
                             <em class="fa fa-times"></em>
-                        </a>
+                        <% end %>
                     </td>
                 </tr>
             <% end %>

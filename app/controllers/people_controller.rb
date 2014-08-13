@@ -1,13 +1,24 @@
 class PeopleController < ApplicationController
     def create
-        @person = Person.new(person_params)
+        person = Person.create(person_params).valid?
 
-        @person.save
-        redirect_to @person
+        if person
+            person.save!
+            redirect_to person
+        else
+            redirect_to '/', :flash => { :errors => person.errors }
+        end
     end
 
     def show
         @person = Person.find(params[:id])
+    end
+
+    def destroy
+        #@person = Person.find(params[:id])
+
+        Person.destroy(params[:id])
+        redirect_to '/'
     end
 
     private
