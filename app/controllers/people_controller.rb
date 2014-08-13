@@ -5,7 +5,7 @@ class PeopleController < ApplicationController
         if person.save
             redirect_to person
         else
-            redirect_to '/', :flash => { :errors => person.errors.full_messages }
+            redirect_to '/', flash: { errors: person.errors.full_messages }
         end
     end
 
@@ -25,7 +25,7 @@ class PeopleController < ApplicationController
         if person.save
             redirect_to person
         else
-            redirect_to edit_person_path, :flash => { :errors => person.errors.full_messages }
+            redirect_to edit_person_path, flash: { errors: person.errors.full_messages }
         end
     end
 
