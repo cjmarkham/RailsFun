@@ -1,12 +1,11 @@
 class PeopleController < ApplicationController
     def create
-        person = Person.create(person_params).valid?
+        person = Person.create(person_params)
 
-        if person
-            person.save!
+        if person.save
             redirect_to person
         else
-            redirect_to '/', :flash => { :errors => person.errors }
+            redirect_to '/', :flash => { :errors => person.errors.full_messages }
         end
     end
 
