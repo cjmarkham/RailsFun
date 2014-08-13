@@ -13,8 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require jquery
+//= require_self
+//= require ./railsfun
 
-$(function () {
-    $('[data-toggle="tooltip"]').tooltip();
-});
+//= require_tree .
